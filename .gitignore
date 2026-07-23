@@ -1,0 +1,10 @@
+.dart_tool/
+.packages
+.pub/
+.flutter-plugins-dependencies
+build/
+coverage/
+android/.gradle/
+android/local.properties
+ios/Pods/
+ios/.symlinks/
