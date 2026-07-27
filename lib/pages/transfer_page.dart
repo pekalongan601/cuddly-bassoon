@@ -61,10 +61,10 @@ class _TransferPageState extends State<TransferPage> {
       _TransferAction('Tampilkan\nQR Bayar', Icons.qr_code_2_rounded),
     ];
     return SoftCard(
-      radius: 14,
+      radius: 16,
       padding: const EdgeInsets.fromLTRB(16, 22, 16, 18),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const Padding(padding: EdgeInsets.only(left: 8), child: Text('Transfer ke', style: TextStyle(fontSize: 29, fontWeight: FontWeight.w600))),
+        const Padding(padding: EdgeInsets.only(left: 8), child: Text('Transfer ke', style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600))),
         const SizedBox(height: 23),
         GridView.builder(
           itemCount: actions.length,
@@ -134,7 +134,7 @@ class _TransferPageState extends State<TransferPage> {
         child: Container(
           alignment: Alignment.center,
           decoration: BoxDecoration(border: Border(bottom: BorderSide(color: active ? AppColors.orange : const Color(0xFFE4E4E4), width: active ? 4 : 1))),
-          child: Text(label, style: TextStyle(fontSize: 23, fontWeight: active ? FontWeight.w600 : FontWeight.w500, color: active ? AppColors.orange : const Color(0xFF292929))),
+          child: Text(label, style: TextStyle(fontSize: 22, fontWeight: active ? FontWeight.w600 : FontWeight.w500, color: active ? AppColors.orange : const Color(0xFF292929))),
         ),
       );
 

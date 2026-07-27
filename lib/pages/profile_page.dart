@@ -21,7 +21,7 @@ class ProfilePage extends ConsumerWidget {
           physics: const BouncingScrollPhysics(),
           slivers: [
             SliverPadding(
-              padding: const EdgeInsets.fromLTRB(24, 14, 24, 26),
+              padding: const EdgeInsets.fromLTRB(20, 14, 20, 26),
               sliver: SliverList(delegate: SliverChildListDelegate([
                 _profileHeader(state),
                 const SizedBox(height: 43),
@@ -49,7 +49,7 @@ class ProfilePage extends ConsumerWidget {
       ]);
 
   Widget _notice(IconData icon, String title, String description, String action) => SoftCard(
-        radius: 14,
+        radius: 16,
         padding: const EdgeInsets.fromLTRB(18, 20, 14, 20),
         child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(padding: const EdgeInsets.only(top: 2), child: OrangeCircleIcon(icon: icon, size: 40, iconSize: 22)),
@@ -74,7 +74,7 @@ class ProfilePage extends ConsumerWidget {
       _ProfileItem('Beri Masukan', Icons.feedback_outlined),
     ];
     return SoftCard(
-      radius: 14,
+      radius: 16,
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(children: [
         ...primary.map((item) => _settingRow(context, item)),

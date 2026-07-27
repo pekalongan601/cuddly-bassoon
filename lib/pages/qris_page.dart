@@ -128,7 +128,7 @@ class _QrisPageState extends State<QrisPage> with SingleTickerProviderStateMixin
         builder: (_) => Padding(
           padding: const EdgeInsets.fromLTRB(24, 0, 24, 36),
           child: Column(mainAxisSize: MainAxisSize.min, children: [
-            const Text('QR Saya', style: TextStyle(fontSize: 23, fontWeight: FontWeight.w700)),
+            const Text('QR Saya', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700)),
             const SizedBox(height: 20),
             Container(height: 205, width: 205, color: Colors.black, child: const Icon(Icons.qr_code_2_rounded, color: Colors.white, size: 190)),
             const SizedBox(height: 16),

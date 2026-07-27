@@ -46,16 +46,16 @@ class HomePage extends ConsumerWidget {
   Widget _header(BuildContext context, WidgetRef ref, AppState state) => Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const UserAvatar(size: 74),
-          const SizedBox(width: 16),
+          const UserAvatar(size: 82),
+          const SizedBox(width: 14),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(top: 2),
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(state.userName, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 23, fontWeight: FontWeight.w500)),
+                Text(state.userName, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600, color: Color(0xFF1A1D23))),
                 const SizedBox(height: 8),
                 Row(children: [
-                  Flexible(child: Text('No. Rekening: ${state.accountNumber}', overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 17, color: AppColors.muted))),
+                  Flexible(child: Text('No. Rekening: ${state.accountNumber}', overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 16, color: Color(0xFF8A8F98)))),
                   const SizedBox(width: 8),
                   InkWell(
                     borderRadius: BorderRadius.circular(6),
@@ -72,8 +72,8 @@ class HomePage extends ConsumerWidget {
       );
 
   Widget _balanceCard(BuildContext context, WidgetRef ref, AppState state) => Container(
-        height: 354,
-        padding: const EdgeInsets.fromLTRB(32, 28, 26, 27),
+        height: 372,
+        padding: const EdgeInsets.fromLTRB(28, 32, 26, 32),
         decoration: BoxDecoration(
           color: AppColors.orange,
           borderRadius: BorderRadius.circular(Layout.cardRadius),
@@ -122,7 +122,7 @@ class HomePage extends ConsumerWidget {
               const SizedBox(height: 20),
               AnimatedSwitcher(
                 duration: const Duration(milliseconds: 200),
-                child: Text(visibleMoney(state, state.balance), key: ValueKey('${state.isBalanceHidden}-${state.balance}'), style: const TextStyle(color: Colors.white, fontSize: 43, fontWeight: FontWeight.w500, letterSpacing: -.7)),
+                child: Text(visibleMoney(state, state.balance), key: ValueKey('${state.isBalanceHidden}-${state.balance}'), style: const TextStyle(color: Colors.white, fontSize: 46, fontWeight: FontWeight.w600, letterSpacing: -1.0, height: 1.0)),
               ),
               const Spacer(),
               Container(height: 1, color: Colors.white.withValues(alpha: .28)),
@@ -182,7 +182,7 @@ class HomePage extends ConsumerWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemCount: actions.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, mainAxisExtent: 157),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, mainAxisExtent: 150),
         itemBuilder: (_, index) => _quickAction(actions[index]),
       ),
     );
@@ -195,18 +195,18 @@ class HomePage extends ConsumerWidget {
           borderRadius: BorderRadius.circular(14),
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
             Stack(clipBehavior: Clip.none, children: [
-              Container(width: 50, height: 50, alignment: Alignment.center, child: Icon(action.icon, color: AppColors.orange, size: 35)),
+              Container(width: 52, height: 52, alignment: Alignment.center, child: Icon(action.icon, color: const Color(0xFFFF6600), size: 32)),
               if (action.badge != null) Positioned(right: -24, top: -4, child: Container(padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3), decoration: BoxDecoration(color: const Color(0xFFFFD5A2), borderRadius: BorderRadius.circular(7)), child: Text(action.badge!, style: const TextStyle(color: Color(0xFF6A370D), fontWeight: FontWeight.w600, fontSize: 12))))
             ]),
             const SizedBox(height: 12),
-            Text(action.label, textAlign: TextAlign.center, style: const TextStyle(fontSize: 16, color: Color(0xFF545454), height: 1.18)),
+            Text(action.label, textAlign: TextAlign.center, style: const TextStyle(fontSize: 14.5, color: Color(0xFF545454), height: 1.2, fontWeight: FontWeight.w500)),
           ]),
         ),
       );
 
   Widget _banner() => Container(
-        height: 118,
-        padding: const EdgeInsets.all(22),
+        height: 110,
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(color: const Color(0xFF1C61E7), borderRadius: BorderRadius.circular(16)),
         child: const Row(children: [Icon(Icons.workspace_premium_rounded, size: 54, color: Color(0xFFFF9800)), SizedBox(width: 14), Expanded(child: Text('BUNGA DEPOSITO SPESIAL\nUntuk masa depan yang lebih pasti', style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.w800, height: 1.25)))]),
       );
